@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Floor&Wall</title>
+</head>
+<body>
+  <script type="text/javascript">
+  	function hideFun1(){
+  		document.getElementById("floor").style.display= "block";
+  		document.getElementById("wall").style.display= "none";
+  	}
+  	function hideFun2(){
+  		document.getElementById("floor").style.display= "none";
+  		document.getElementById("wall").style.display= "block";
+  	}
+  	function calcSum1(){
+		l=parseInt(document.mainForm.lname.value);
+		w=parseInt(document.mainForm.wname.value);
+		f=parseInt(document.mainForm.fname.value);
+		sum=(l*w)/(f**2);
+		res=sum+sum*0.05;
+		document.mainForm.textBoxSum.value=Math.round(res);
+  	}
+  	function calcSum2(){
+		l=parseInt(document.mainForm.lname.value);
+		w=parseInt(document.mainForm.wname.value);
+		wall1=parseInt(document.mainForm.wlength.value);
+		wall2=parseInt(document.mainForm.wwidth.value);
+		sum=(l*w)*144/(wall1*wall2);
+		res=sum+sum*0.05;
+		document.mainForm.textBoxSum.value=Math.round(res);
+	}
+
+</script>
+	<form name="mainForm">
+	<fieldset>
+	    <legend>Building:</legend>
+	    <label>Length:</label><br>
+	    <input type="text" name="lname"><br><br>
+	    <label>Width:</label><br>
+	    <input type="text" name="wname"><br><br>
+ 	</fieldset>
+ 		<label>Floor</label>
+ 		<input type="radio" name="thing" id="t1" onclick="hideFun1()">
+ 		<label>Wall</label>
+ 		<input type="radio" name="thing" id="t2" onclick="hideFun2()">
+ 		<br>
+ 		<!-- For Floor -->
+ 		<div id="floor">
+ 			<label>Feet</label>
+ 			<input type="text"name="fname"><br><br>
+ 			<input type="button" value="Process" id="btn" onclick="javascript:calcSum1()" />
+ 		</div>
+
+ 		<!-- For Wall -->
+ 		<div id="wall">
+ 			<label>Wlength</label>
+ 			<input type="text" name="wlength"><br><br>
+ 			<label>Wwidth</label>
+ 			<input type="text" name="wwidth"><br><br>
+ 			<input type="button" value="Process" id="btn" onclick="javascript:calcSum2()" />
+ 		</div>
+ 		<!-- For Result -->
+ 		<div id="result">
+ 			<label>Result</label>
+ 			<input type="text" name="textBoxSum" readonly="readonly" />
+ 		</div>
+ 	</form>
+</body>
+</html>

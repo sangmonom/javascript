@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		ans=Math.floor(Math.random() * 20);
+		alert(ans);
+
+		let quantity=0;
+		for(let i=0;i<20;i++){
+		num=prompt('Enter a number');
+		
+		if(num>ans){
+			alert('Higher');
+			quantity++;
+		}
+			else if(num<ans){
+			alert('Lower');
+			quantity++;
+			}
+			else{
+				alert('True');
+				quantity++;
+				alert ('count is'+quantity);
+				break;
+			}
+		}
+	</script>
+</body>
+</html>
